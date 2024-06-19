@@ -42,7 +42,10 @@ def buscar_servidores(searchType, searchTerm, searchAlgorithm):
     servidores = sc._list()
 
     if searchAlgorithm == 'binarysearch':
-        servidores = servidores.busqueda_binario_models(servidores, searchType, searchTerm)
+            dato = servidores.busqueda_binario_models(servidores, searchType, searchTerm)
+            servidores.clear
+            servidores.addNode(dato, 0)
+
     elif searchAlgorithm == 'linearsearch':
         servidores = servidores.busqueda_lineal_binario_models(servidores, searchTerm, searchType)
     else:
