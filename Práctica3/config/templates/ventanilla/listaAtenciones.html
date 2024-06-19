@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4">ATENCIONES</h1>
+        <h3 class="display-7">{{ mensaje }}</h3>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+            <table id="tabla" class="table table-striped table-bordered text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nro</th>
+                        <th scope="col">Calificación</th>
+                        <th scope="col">Tiempo Min</th>
+                        <th scope="col">Motivo</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in lista %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.calificacion }}</td>
+                        <td>{{ item.tiempo }}</td>
+                        <td>{{ item.motivo }}</td>
+                        <td>{{ item.fecha }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="text-center mb-4">
+        <a href="/servidor" class="btn btn-primary">VOLVER</a>
+        <a href="/servidor/atenciones/ver/{{idServidor}}" class="btn btn-info">AGREGAR</a>
+        <a href="/servidor/atenciones/eliminar/{{idServidor}}" class="btn btn-danger">ELIMINAR</a>
+    </div>
+    
+</div>
+{% endblock %}

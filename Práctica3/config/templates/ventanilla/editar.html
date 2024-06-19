@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-white mb-4">Modificar Servidor Publico</h2>
+    <div class="text-center mb-4">
+        <a href="/servidor" class="btn btn-danger">VOLVER</a>
+    </div>
+    <form id="form" class="custom-form booking-form" action="/servidor/modificar" method="post" role="form">
+        <div class="booking-form-body">
+            <input type="hidden" name="id" value="{{ data._id }}" />
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-12 mb-3">
+                    <input type="text" value="{{ data._nombreServidor }}" name="nombreServidor"
+                        class="form-control border-primary p-4" placeholder="Nombre" required>
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                    <input type="text" value="{{ data._apellidoServidor }}" name="apellidoServidor"
+                        class="form-control border-primary p-4" placeholder="Apellido" required>
+                </div>
+                <div class="col-lg-6 col-12 mb-3">
+                    <input type="text" value="{{ data._especialidad }}" name="especialidad"
+                        class="form-control border-primary p-4" placeholder="Especialidad" required>
+                </div>
+                <div class="col-lg-4 col-md-6 col-8 mx-auto mt-4">
+                    <button id="boton" type="submit" class="form-control btn btn-success">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
